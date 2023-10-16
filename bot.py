@@ -64,7 +64,7 @@ class JmilesBot:
             s_dataX = str(dataX)
             date = dates[i]
 
-            s_fechaX = f"{date.split('-')[-2]}/{date.split('-')[-1]}"
+            s_fechaX = f"{date.split('-')[-1]}/{date.split('-')[-2]}"
 
             arr2 = np.array(['*']).repeat(width).reshape(width, 1).repeat(sizeX, axis = 1)
 
@@ -136,6 +136,7 @@ if __name__ == '__main__':
         module = sys.argv[2].lower()
         type = sys.argv[3].lower()
         # range = get_range(sys.argv[4])
+        print(bot.RenderGraph(module, type, range))
 
     else:
         raise NotImplementedError('Function not implemented')
