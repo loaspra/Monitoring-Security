@@ -11,16 +11,16 @@ const app = express();
 app.use('/images',express.static('archive/images'));
 app.use(express.json());
 
-const db_data = {
-    user : "postgres",
-    password : "Softjuandius_25",
-    database : "postgres",
-    port : 5432
-}
+// const db_data = {
+//     user : "postgres",
+//     password : "Softjuandius_25",
+//     database : "postgres",
+//     port : 5432
+// }
 
-const client = new Client(db_data);
+// const client = new Client(db_data);
 
-client.connect();
+// client.connect();
 async function searchApi(req,res){
     try{
         let pokemon = req.query.pokemon;
@@ -47,9 +47,10 @@ async function searchApi(req,res){
 async function pokeStats(req,res){
     try{
         const pokemon = req.query.pokemon;
-        const response_pokeapi = await client.query(`select * from pokemones where name = '${pokemon}'`);
+        // const response_pokeapi = await client.query(`select * from pokemones where name = '${pokemon}'`);
         // console.log(response_pokeapi.rows);
-        res.send(response_pokeapi.rows);
+        // res.send(response_pokeapi.rows);
+        res.send("Perro");
 
     }catch(err){
         console.log(err.message);
